@@ -1,0 +1,2 @@
+txtai
+simple_term_menu
