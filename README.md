@@ -13,7 +13,7 @@ According to their [paper](https://arxiv.org/pdf/2004.10706.pdf), the embeddings
 ## How It Works
 
 First, we initialize a feed-forward neural network with 3x768 input neurons, enough for the embedding of a query and one pair of documents.
-The output of this model is a single sigmoid neuron since we are doing binary classification in the pairwise approach.
+The output of this model is a single sigmoid neuron since the pairwise approach is an instance of binary classification.
 
 For every unseen query, we do simple semantic search (cosine similarity) on the embeddings, and retrieve an ordered list of the five most relevant documents.
 
@@ -27,7 +27,7 @@ The user is now given the results `1, 2, 3, 4, 5`.
 If the user selects result `3`, this is taken as a suggestion for `3, 1, 2, 4, 5` as the best ordering,
 and the model is re-trained on that.
 
-**It's all about parameters!** The important thing to keep in mind with OL2R is that all training must be lose and flexible, so you don't want to overtrain your model on a new "truth".
+An important thing to keep in mind with OL2R is that all training must be loose and flexible, so you don't want to overtrain your model on a new "truth".
 
 ## Remarks
 
